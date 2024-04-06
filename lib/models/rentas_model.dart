@@ -59,6 +59,7 @@ class Mobiliario {
   String? nombre;
   int? cantidad_disponible;
   double? precio_unitario_dia;
+  String? foto_mobiliario;
   List<Categoria>? categoria;
 
   Mobiliario({
@@ -67,16 +68,17 @@ class Mobiliario {
     this.cantidad_disponible,
     this.precio_unitario_dia,
     this.categoria,
+    this.foto_mobiliario,
   });
 
   factory Mobiliario.fromMap(Map<String, dynamic> mobiliario) {
     return Mobiliario(
-      mobiliarioId: mobiliario['mobiliarioId'],
-      nombre: mobiliario['nombre'],
-      cantidad_disponible: mobiliario['cantidad_disponible'],
-      precio_unitario_dia: mobiliario['precio_unitario_dia'],
-      categoria: [],
-    );
+        mobiliarioId: mobiliario['mobiliarioId'],
+        nombre: mobiliario['nombre'],
+        cantidad_disponible: mobiliario['cantidad_disponible'],
+        precio_unitario_dia: mobiliario['precio_unitario_dia'],
+        categoria: [],
+        foto_mobiliario: mobiliario['foto_mobiliario']);
   }
 }
 
@@ -100,14 +102,19 @@ class Estado_renta {
 class Categoria {
   int? categoriaId;
   String? categoria;
+  String? foto_categoria;
 
-  Categoria({this.categoriaId, this.categoria});
+  Categoria({
+    this.categoriaId,
+    this.categoria,
+    this.foto_categoria,
+  });
 
   factory Categoria.fromMap(Map<String, dynamic> categoria) {
     return Categoria(
-      categoriaId: categoria['categoriaId'],
-      categoria: categoria['categoria'],
-    );
+        categoriaId: categoria['categoriaId'],
+        categoria: categoria['categoria'],
+        foto_categoria: categoria['foto_categoria']);
   }
 }
 
