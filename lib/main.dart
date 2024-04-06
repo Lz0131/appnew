@@ -1,6 +1,7 @@
 import 'package:appnew/models/popular_model.dart';
 import 'package:appnew/pages/dashboard_screen.dart';
 import 'package:appnew/pages/detail_movie_screen.dart';
+import 'package:appnew/pages/favorite_movies_screen.dart';
 import 'package:appnew/pages/home_page.dart';
 import 'package:appnew/pages/popular_movies_screen.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
             "/recetario": (BuildContext context) =>
                 HomePage(themeNotifier: AppValueNotifier.themeNotifier),
             "/movies": (BuildContext context) => const PopularMoviesScreen(),
+            "/moviesf": (BuildContext context) => const FavoriteMoviesScreen(),
             "/detail": (BuildContext context) {
               final popularModel =
                   ModalRoute.of(context)?.settings.arguments as PopularModel;

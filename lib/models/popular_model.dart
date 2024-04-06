@@ -5,7 +5,7 @@ import 'package:appnew/models/actor_model.dart';
 class PopularModel {
   bool? adult;
   String? backdropPath;
-  List<int>? genreIds;
+  List<genresModel>? genre;
   int? id;
   String? originalLanguage;
   String? originalTitle;
@@ -18,11 +18,12 @@ class PopularModel {
   double? voteAverage;
   int? voteCount;
   List<Actor> actors; // Lista de actores
+  String? trailerUrl;
 
   PopularModel({
     this.adult,
     this.backdropPath,
-    this.genreIds,
+    required this.genre,
     this.id,
     this.originalLanguage,
     this.originalTitle,
@@ -35,6 +36,7 @@ class PopularModel {
     this.voteAverage,
     this.voteCount,
     required this.actors, // Debes incluir la lista de actores en el constructor
+    required this.trailerUrl,
   });
   factory PopularModel.fromMap(Map<String, dynamic> movie) {
     return PopularModel(
@@ -48,7 +50,26 @@ class PopularModel {
       title: movie['title'],
       voteAverage: movie['vote_average'],
       voteCount: movie['vote_count'],
+      genre: [],
       actors: [],
+      trailerUrl: movie['trailerUrl'] ?? '',
+    );
+  }
+}
+
+class genresModel {
+  int? id;
+  String? name;
+
+  genresModel({
+    this.id,
+    this.name,
+  });
+
+  factory genresModel.fromMap(Map<String, dynamic> genres) {
+    return genresModel(
+      id: genres['id'],
+      name: genres['name'],
     );
   }
 }

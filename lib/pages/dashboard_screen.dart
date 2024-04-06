@@ -40,6 +40,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
             },
           ),
           ListTile(
+            leading: Icon(Icons.add),
+            title: Text('Peliculas Favoritas'),
+            subtitle: Text('Ver las peliculas'),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/moviesf');
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.close),
             title: Text('Salir'),
             subtitle: Text('Hasta luego'),

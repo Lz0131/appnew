@@ -53,6 +53,8 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_rating_bar: ^4.0.1
   url_launcher: ^6.2.5
+  shared_preferences: ^2.2.2
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_test:
